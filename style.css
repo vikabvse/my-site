@@ -268,14 +268,25 @@ footer a:active {
 
 /* Форма обратной связи */
 form {
-    
-    background-color: #721616;
+    background: linear-gradient(to bottom, #0f4a2a, #fafafa);
     padding: 25px;
     border-radius: 10px;
     max-width: 600px;
     margin: 0 auto;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid #eeeeee;
+
+}
+
+.form-btn{
+   
+  color: #721616;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  
 
 }
 
@@ -335,7 +346,7 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  background: linear-gradient(to bottom, #ffffff, #fafafa);
+  background: linear-gradient(to bottom, #0f4a2a, #659e7f, #fafafa, #fafafa);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
