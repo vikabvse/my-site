@@ -8,6 +8,9 @@ body {
     margin: 0;
     padding: 0;
     
+    
+    
+    
 }
 
 sec1{
@@ -53,6 +56,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    
 
 }
 
@@ -62,6 +66,7 @@ header a {
     font-weight: bold;
     display: inline-block;
   transition: all 0.3s ease;
+  
 }
 header a:hover {
   transform: translateX(8px) scale(1.05); /* Смещение + увеличение на 5 % */
@@ -78,10 +83,12 @@ nav ul {
     list-style: none;              /* убираем маркеры списка */
     margin: 0;
     padding: 0;
+    
 }
 
 nav ul li {
     display: inline-block;         /* располагаем пункты меню в строку */
+    align-items: center;
     margin-right: 20px;
 }
 
@@ -166,7 +173,31 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-section {
+.page-layout {
+    display: grid;
+    grid-template-areas:
+        
+   
+}
+
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-areas:
+            "hero"
+            "features"
+            "products"
+            
+        grid-template-columns: 1fr;
+    }
+}
+
+.hero-section { grid-area: hero; }
+.features-section { grid-area: features; }
+.popular-section { grid-area: popular; }
+.sidebar-section { grid-area: sidebar; }
+.gallery-section { grid-area: gallery; }
+
+.section class="features-section" {
     margin-top: 40px;
     margin-bottom: 40px;
     transition: opacity 0.5s;
@@ -338,6 +369,19 @@ input:focus, textarea:focus, select:focus {
   margin: 0 auto;
 }
 
+.product-details {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.product-details .price {
+    margin: 0;
+    text-align: right;
+}
+
+
 /* Карточка товара */
 .product-card {
  
@@ -350,6 +394,11 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
 
 
@@ -447,4 +496,370 @@ color:#ffffff ;
 }
 
 
+
+
+.reviews-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .review h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+  
+  .review-form {
+    background: linear-gradient(to bottom, #0f4a2a, #659e7f, #fafafa, #fafafa);;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "photo text rating"
+      "photo text submit";
+    gap: 25px;
+    align-items: start;
+  }
+  
+  /* Область фото клиента */
+  .review-photo {
+    grid-area: photo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .photo-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+  }
+  
+  #preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    object-fit: cover;
+    border: 3px solid #0f4a2a;
+  }
+  
+  .photo-label span {
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  /* Область текста отзыва */
+  .review-text {
+    grid-area: text;
+  }
+  
+  .review-text textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s;
+  }
+  
+  .review-text textarea:focus {
+    outline: none;
+    border-color: #000000;
+  }
+  
+  /* Область оценки звёздами */
+  .review-rating {
+    grid-area: rating;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .review-rating p {
+    margin: 0;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .stars {
+    display: flex;
+    direction: rtl; /* Для корректного отображения звёзд */
+  }
+  
+  .stars input[type="radio"] {
+    display: none;
+  }
+  
+  .stars label {
+    font-size: 32px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+    user-select: none;
+  }
+  
+  .stars input:checked ~ label,
+  .stars label:hover,
+  .stars label:hover ~ label {
+    color: #F4A2a2; /* Розовый цвет для активных звёзд */
+  }
+  
+  /* Кнопка отправки */
+  .submit-button {
+    grid-area: submit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .submit-button button {
+    background: #F4A2a2;
+    color: #721616;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submit-button button:hover {
+    background: #b37070;
+  }
+  
+
+
+  /* ===== АДАПТИВНОСТЬ ===== */
+
+/* Для планшетов и телефонов (ширина ≤ 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Для телефонов (ширина ≤ 768px) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .hero {
+        padding: 40px 0;
+    }
+    .hero h1 {
+        font-size: 24px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .container {
+        padding: 0 12px;
+    }
+}
+
+/* Для очень маленьких телефонов (ширина ≤ 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .hero h1 {
+        font-size: 20px;
+    }
+    .hero p {
+        font-size: 14px;
+    }
+    .btn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "photo"
+        "text"
+        "rating"
+        "submit";
+      gap: 20px;
+    }
+    
+    #preview {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  @media (min-width: 768px) {
+    .product-card {
+        flex-direction: row;
+        align-items: center;
+    }
+    .product-card .card-img {
+        flex: 0 0 200px; /* фиксированная ширина */
+        height: 200px;
+    }
+    .product-card .card-content {
+        flex: 1;
+        padding: 20px;
+    }
+}
+
+/* На очень маленьких экранах уменьшаем отступы */
+@media (max-width: 480px) {
+    .product-card .card-content {
+        padding: 12px;
+    }
+    .product-card .card-img {
+        height: 140px;
+    }
+}
+
+@media (min-width: 600px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшете */
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки на десктопе */
+    }
+}
+@media (min-width: 600px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (min-width: 1200px) {
+    .features-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .feature-card {
+        max-width: 1100px;
+    }
+
+    .feature-card::after {
+        content: "Характеристики";
+        display: block;
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        text-align: center;
+        font-style: italic;
+        color: #666;
+    }
+}
+
+/* На телефонах и планшетах — вертикальное */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block;
+        padding: 8px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Поля ввода занимают всю ширину */
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* На телефонах убираем отступы, делаем форму на всю ширину */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    form input,
+    form textarea,
+    form select {
+        font-size: 16px; /* важно: 16px чтобы не было зума на iOS */
+        padding: 12px 15px;
+    }
+    label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        width: 100%;
+    }
+}
 

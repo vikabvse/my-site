@@ -21,9 +21,9 @@
         </div>
     </header>
 
-    <main>
+    <main class="page-layout">
         <sec1>
-        <section>
+        <section class="hero-section">
             <div>
                 <h1>Добро пожаловать! в "BUTON" - царство цветов и хорошего настроения</h1>
                 
@@ -31,7 +31,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="features-section">
             <div>
                 <h2>Почему выбирают нас</h2>
                 <div>
@@ -93,6 +93,58 @@
       
       </div>
     </div>
+
+    <section class="review">
+        <h2>Оставьте свой отзыв</h2>
+        <div class="reviews-container">
+            
+            <form class="review-form" id="feedbackForm">
+              <div class="form-grid">
+                <!-- Область для фото клиента -->
+                <div class="review-photo">
+                  <label for="photoUpload" class="photo-label">
+                    <img id="preview" src="" alt="Выбрать файл/Предварительный просмотр">
+                    <span>Добавить фото</span>
+                  </label>
+                  <input type="file" id="photoUpload" name="photo" accept="image/*" style="display: none;">
+                </div>
+        
+                <!-- Область для текста отзыва -->
+                <div class="review-text">
+                  <textarea
+                    id="reviewText"
+                    name="review"
+                    placeholder="Напишите свой отзыв о наших цветах и сервисе..."
+                    required
+                  ></textarea>
+                </div>
+        
+                <!-- Область для оценки звёздами -->
+                <div class="review-rating">
+                  <p>Оцените нас:</p>
+                  <div class="stars">
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">★</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">★</label> 
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">★</label>
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">★</label>
+                  </div>
+                </div>
+        
+                <!-- Кнопка отправки -->
+                <div class="submit-button">
+                  <button type="submit">Отправить отзыв</button>
+                </div>
+              </div>
+            </form>
+          </div>
+    </section>
+
     </main>
 
     <footer>
@@ -103,9 +155,9 @@
             </div>
             <div>
                 <h4>Контакты</h4>
-                <p>Email: example@site.ru</p>
-                <p>Телефон: +7 (123) 456-78-90</p>
-                <p>Адрес: ул. Тверская, Москва</p>
+                <p>Email: butonflouwers@gmail.com</p>
+                <p>Телефон: +7 (895)-205-55-55</p>
+                <p>Адрес: ул. Ленина 1, гр. Северск</p>
             </div>
             <div>
                 <h4>Следите за нами</h4>
