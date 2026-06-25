@@ -7,22 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div>
-            <a href="index.html"> <img src="img/лого2.jpg" width="70" height="70" alt="logo" ></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html"class="btn">Главная</a></li>
-                    <li><a href="catalog.html"class="btn">Каталог</a></li>
-                    <li><a href="contacts.html"class="btn">Контакты</a></li>
-                    <li><a href="feedback.html"class="btn">Обратная связь</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="header-inner">
+        <a href="index.html">
+            <img src="img/лого2.jpg" width="70" height="70" alt="logo">
+        </a>
+
+        <!-- Кнопка-бургер -->
+        <button class="burger-btn" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация в контейнере -->
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="btn">Главная</a></li>
+                <li><a href="catalog.html" class="btn">Каталог</a></li>
+                <li><a href="contacts.html" class="btn">Контакты</a></li>
+                <li><a href="feedback.html" class="btn">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main class="page-layout">
-        <sec1>
         <section class="hero-section">
             <div>
                 <h1>Добро пожаловать! в "BUTON" - царство цветов и хорошего настроения</h1>
@@ -58,7 +68,6 @@
                 </div>
             </div>
         </section>
-        </sec1>
 
          <section class="products">
     <h2>Наш мерч</h2>
@@ -92,13 +101,14 @@
 
       
       </div>
-    </div>
+      </section>
+
 
     <section class="review">
         <h2>Оставьте свой отзыв</h2>
         <div class="reviews-container">
             
-            <form class="review-form" id="feedbackForm">
+            <form class="review-form" id="feedbackForm method="post" enctype="multipart/form-data">
               <div class="form-grid">
                 <!-- Область для фото клиента -->
                 <div class="review-photo">
@@ -168,5 +178,21 @@
             <p>&copy; 2026 Все права защищены. Учебный проект.</p>
         </div>
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const burger = document.querySelector('.burger-btn');
+          const nav = document.querySelector('.main-nav');
+      
+          if (burger && nav) {
+              burger.addEventListener('click', () => {
+                  const isOpen = nav.classList.toggle('open');
+                  burger.classList.toggle('active', isOpen);
+                  burger.setAttribute('aria-expanded', String(isOpen));
+              });
+          }
+      });
+      </script>
+      
 </body>
 </html>
