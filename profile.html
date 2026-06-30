@@ -9,98 +9,214 @@
 </head>
 <body>
 
-     <!-- Навигационное меню -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">MyApp</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+    <header>
+        <div class="header-inner">
+            <a href="index.html">
+                <img src="img/лого2.jpg" width="70" height="70" alt="logo">
+            </a>
+    
+            <!-- Кнопка-бургер -->
+            <button class="burger-btn" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="login.html">Вход</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="signup.html">Регистрация</a></li>
+    
+            <!-- Навигация в контейнере -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="btn">Главная</a></li>
+                    <li><a href="catalog.html" class="btn">Каталог</a></li>
+                    <li><a href="contacts.html" class="btn">Контакты</a></li>
+                    <li><a href="feedback.html" class="btn">Обратная связь</a></li>
+                    <li class="nav-item ms-lg-3 ms-md-2 ms-sm-0">
+              <a class="btn btn-outline-light btn-sm px-3" href="login.html">Войти</a>
+          </li>
+          <li class="nav-item">
+              <a class="btn btn-light btn-sm px-3 text-dark" href="signup.html">Регистрация</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-light btn-sm px-3 text-dark" href="profile.html">Профиль</a>
+        </li>
                 </ul>
-            </div>
+            </nav>
+    
+            
         </div>
-    </nav>
+        
+    </header>
     
 
     <div class="container py-5">
-        <div class="row">
-            <!-- Левая колонка: данные пользователя -->
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <div class="mb-3">
-                        <!-- Аватар-заглушка -->
-                        <div class="bg-secondary rounded-circle mx-auto d-flex align-items-center justify-content-center" 
-                             style="width: 120px; height: 120px; font-size: 48px; color: white;">
-                            👤
+        <h3 class="mb-4">Личный кабинет</h3>
+
+        <!-- Вкладки: Мои данные / Настройки -->
+        <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="data-tab" data-bs-toggle="tab" data-bs-target="#data" type="button" role="tab">Мои данные</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab">Настройки</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="profileTabsContent">
+            <!-- Вкладка: Мои данные (форма редактирования) -->
+            <div class="tab-pane fade show active" id="data" role="tabpanel">
+                <div class="card shadow-sm p-4">
+                    <h4 class="mb-3">Редактирование профиля</h4>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="editName" class="form-label">Имя</label>
+                                <input type="text" class="form-control" id="editName" value="Иван Петров" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="editEmail" value="ivan@example.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="editPhone" class="form-label">Телефон</label>
+                                <input type="tel" class="form-control" id="editPhone" value="+7 (999) 123-45-67">
+                            </div>
+                            <div class="col-12">
+                                <label for="editAvatar" class="form-label">Аватар</label>
+                                <input type="file" class="form-control form-control-sm" id="editAvatar" accept="image/*">
+                                <small class="text-muted">Выберите изображение (jpg/png). Текущий аватар не меняется без сохранения.</small>
+                            </div>
                         </div>
-                    </div>
-                    <h4>Иван Петров</h4>
-                    <p class="text-muted">ivan@example.com</p>
-                    <hr>
-                    <div class="text-start">
-                        <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
-                        <p><strong>Дата регистрации:</strong> 10.01.2026</p>
-                    </div>
-                    <a href="login.html" class="btn btn-danger w-100 mt-3">Выйти</a>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                            <button type="button" class="btn btn-outline-secondary">Отмена</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <!-- Правая колонка: история заказов -->
-            <div class="col-md-8">
+            <!-- Вкладка: Настройки -->
+            <div class="tab-pane fade" id="settings" role="tabpanel">
                 <div class="card shadow-sm p-4">
-                    <h4 class="mb-3">История заказов</h4>
+                    <h4 class="mb-3">Настройки аккаунта</h4>
 
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>№ заказа</th>
-                                    <th>Дата</th>
-                                    <th>Сумма</th>
-                                    <th>Статус</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>#1001</strong></td>
-                                    <td>15.06.2026</td>
-                                    <td>4 500 ₽</td>
-                                    <td><span class="badge bg-success">Выполнен</span></td>
-                                    <td><button class="btn btn-sm btn-outline-primary">Подробнее</button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>#1002</strong></td>
-                                    <td>12.06.2026</td>
-                                    <td>2 300 ₽</td>
-                                    <td><span class="badge bg-warning text-dark">В обработке</span></td>
-                                    <td><button class="btn btn-sm btn-outline-primary">Подробнее</button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>#1003</strong></td>
-                                    <td>05.06.2026</td>
-                                    <td>7 800 ₽</td>
-                                    <td><span class="badge bg-info">Доставлен</span></td>
-                                    <td><button class="btn btn-sm btn-outline-primary">Подробнее</button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>#1004</strong></td>
-                                    <td>28.05.2026</td>
-                                    <td>1 200 ₽</td>
-                                    <td><span class="badge bg-danger">Отменён</span></td>
-                                    <td><button class="btn btn-sm btn-outline-primary">Подробнее</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <!-- Настройка уведомлений -->
+                    <div class="mb-4">
+                        <h5>Уведомления</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="notifyEmail" checked>
+                            <label class="form-check-label" for="notifyEmail">Email-уведомления</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="notifyPush" checked>
+                            <label class="form-check-label" for="notifyPush">Push-уведомления</label>
+                        </div>
                     </div>
+
+                    <!-- Смена пароля (только вёрстка) -->
+                    <div class="mb-4">
+                        <h5>Смена пароля</h5>
+                        <form>
+                            <div class="mb-2">
+                                <label for="currentPassword" class="form-label">Текущий пароль</label>
+                                <input type="password" class="form-control" id="currentPassword">
+                            </div>
+                            <div class="mb-2">
+                                <label for="newPassword" class="form-label">Новый пароль</label>
+                                <input type="password" class="form-control" id="newPassword">
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Подтверждение нового пароля</label>
+                                <input type="password" class="form-control" id="confirmNewPassword">
+                            </div>
+                            <button type="submit" class="btn btn-sm btn-primary">Сменить пароль</button>
+                        </form>
+                    </div>
+
+                    
                 </div>
             </div>
         </div>
+
+         <!-- История заказов (оставляем как была, но в отдельной карточке) -->
+         <div class="mt-5">
+            <div class="card shadow-sm p-4">
+                <h4 class="mb-3">История заказов</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>№ заказа</th>
+                                <th>Дата</th>
+                                <th>Сумма</th>
+                                <th>Статус</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#1001</strong></td>
+                                <td>15.06.2026</td>
+                                <td>4 500 ₽</td>
+                                <td><span class="badge bg-success">Выполнен</span></td>
+                                <td><button class="btn btn-sm btn-outline-primary">Подробнее</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#1002</strong></td>
+                                <td>12.06.2026</td>
+                                <td>2 300 ₽</td>
+                                <td><span class="badge bg-warning text-dark">В обработке</span></td>
+                                <td><button class="btn btn-sm btn-outline-primary">Подробнее</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#1003</strong></td>
+                                <td>05.06.2026</td>
+                                <td>7 800 ₽</td>
+                                <td><span class="badge bg-info">Доставлен</span></td>
+                                <td><button class="btn btn-sm btn-outline-primary">Подробнее</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#1004</strong></td>
+                                <td>28.05.2026</td>
+                                <td>1 200 ₽</td>
+                                <td><span class="badge bg-danger">Отменён</span></td>
+                                <td><button class="btn btn-sm btn-outline-primary">Подробнее</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Кнопка выхода (справа внизу или отдельно) -->
+        <div class="text-end mt-4">
+            <a href="login.html" class="btn btn-danger">Выйти</a>
+        </div>
     </div>
+    <footer>
+        <div>
+            <div>
+                <h4>О проекте</h4>
+                <p>Учебная верстка. Тема сайта задается студентом. Все страницы связаны.</p>
+            </div>
+            <div>
+                <h4>Контакты</h4>
+                <p>Email: butonflouwers@gmail.com</p>
+                <p>Телефон: +7 (895)-205-55-55</p>
+                <p>Адрес: ул. Ленина 1, гр. Северск</p>
+            </div>
+            <div>
+                <h4>Следите за нами</h4>
+                <p>Соцсети: VK, Max, Rutube</p>
+            </div>
+        </div>
+        <div>
+            <p>&copy; 2026 Все права защищены. Учебный проект.</p>
+        </div>
+    </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

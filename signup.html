@@ -12,21 +12,43 @@
     <!-- Контент будет здесь -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-     <!-- Навигационное меню -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">MyApp</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+    <header>
+        <div class="header-inner">
+            <a href="index.html">
+                <img src="img/лого2.jpg" width="70" height="70" alt="logo">
+            </a>
+    
+            <!-- Кнопка-бургер -->
+            <button class="burger-btn" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="login.html">Вход</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="signup.html">Регистрация</a></li>
+    
+            <!-- Навигация в контейнере -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="btn">Главная</a></li>
+                    <li><a href="catalog.html" class="btn">Каталог</a></li>
+                    <li><a href="contacts.html" class="btn">Контакты</a></li>
+                    <li><a href="feedback.html" class="btn">Обратная связь</a></li>
+                    <li class="nav-item ms-lg-3 ms-md-2 ms-sm-0">
+              <a class="btn btn-outline-light btn-sm px-3" href="login.html">Войти</a>
+          </li>
+          <li class="nav-item">
+              <a class="btn btn-light btn-sm px-3 text-dark" href="signup.html">Регистрация</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-light btn-sm px-3 text-dark" href="profile.html">Профиль</a>
+        </li>
                 </ul>
-            </div>
+            </nav>
+    
+            
         </div>
-    </nav>
+        
+    </header>
+    
 
 
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
@@ -76,6 +98,27 @@
             </div>
         </div>
     </div>
-    
+    <footer>
+        <div>
+            <div>
+                <h4>О проекте</h4>
+                <p>Учебная верстка. Тема сайта задается студентом. Все страницы связаны.</p>
+            </div>
+            <div>
+                <h4>Контакты</h4>
+                <p>Email: butonflouwers@gmail.com</p>
+                <p>Телефон: +7 (895)-205-55-55</p>
+                <p>Адрес: ул. Ленина 1, гр. Северск</p>
+            </div>
+            <div>
+                <h4>Следите за нами</h4>
+                <p>Соцсети: VK, Max, Rutube</p>
+            </div>
+        </div>
+        <div>
+            <p>&copy; 2026 Все права защищены. Учебный проект.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

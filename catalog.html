@@ -233,10 +233,93 @@
         </div>
       </div>
 
-     
-    
-    
+<section>
+      <title>Переворачивающиеся карточки</title>
+      <link rel="stylesheet" href="flip-card.css">
+      
+      <h2>Особенный повод</h2>
+      <div class="card-grid">
+          <!-- Карточка 1 -->
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+              <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                      <div class="flip-card-icon">👰🏻</div>
+                      <h3>Букет невесты</h3>
+                      <p>Нажмите или наведите</p>
+                  </div>
+                  <div class="flip-card-back">
+                      <h3>Свадебный букет</h3>
+                      <p>Доставка в любую точку</p>
+                      <p>Цена: от 10 000 ₽</p>
+                      <a href="#" class="flip-card-btn">Подробнее</a>
+                  </div>
+              </div>
+          </div>
+      
+          <!-- Карточка 2 -->
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+              <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                      <div class="flip-card-icon">🍼</div>
+                      <h3>Букет на рождение малыша</h3>
+                      <p>Нажмите или наведите</p>
+                  </div>
+                  <div class="flip-card-back">
+                      <h3>Выберите цвет букет под пол ребенка</h3>
+                      <p>Доставка в любую точку</p>
+                      <p>Цена: от 5 000 ₽</p>
+                      <a href="#" class="flip-card-btn">Подробнее</a>
+                  </div>
+              </div>
+          </div>
+      
+          <!-- Карточка 3 -->
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+              <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                      <div class="flip-card-icon">💍</div>
+                      <h3>Букет предложение</h3>
+                      <p>Нажмите или наведите</p>
+                  </div>
+                  <div class="flip-card-back">
+                      <h3>Букет "Она сказала - да!"</h3>
+                      <p>Доставка в любую точку</p>
+                      <p>Цена: от 10 000 ₽</p>
+                      <a href="#" class="flip-card-btn">Подробнее</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <script>
+          // Дополнительная анимация — карточки появляются с задержкой
+          document.querySelectorAll('.flip-card').forEach((card, index) => {
+              card.style.animationDelay = `${index * 0.2}s`;
+          });
+      </script>
+</section>
 
+    <section>
+    <h2>Калькулятор скидки</h2>
+      <div class="calculator-container">
+        
+        <div class="calculator">
+            <div class="input-group">
+                <label for="originalPrice">Цена (₽)</label>
+                <input type="number" id="originalPrice" placeholder="1000" min="0">
+            </div>
+            <div class="input-group">
+                <label for="discountPercent">Скидка (%)</label>
+                <input type="number" id="discountPercent" placeholder="10" min="0" max="100">
+            </div>
+            <button id="calculateBtn">Рассчитать</button>
+            <div class="result" id="result">
+                <p>Итоговая цена: <span id="finalPrice">0</span> ₽</p>
+                <p>Сумма скидки: <span id="discountAmount">0</span> ₽</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     </main>
 
@@ -261,5 +344,6 @@
             <p>&copy; 2026 Все права защищены. Учебный проект.</p>
         </div>
     </footer>
+    <script src="discount.js"></script>
 </body>
 </html>

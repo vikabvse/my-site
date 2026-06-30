@@ -28,7 +28,7 @@ h1 {
 
 h2 {
     font-size: 28px;
-    color: #f8b2b2;
+    color: #F4A2a2;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -36,14 +36,14 @@ h2 {
 
 h3 {
     font-size: 22px;
-    color: #f7c4c4;
+    color: #F4A2a2;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 h4 {
     font-size: 18px;
-    color: #f7d5d5;
+    color: #F4A2a2;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -74,8 +74,11 @@ header a:hover {
 }
 
 /* Логотип */
-header > div > a:first-child {
+header > div  > a > img {
+    border-radius: 50%;
+}
     font-size: 24px;
+    
 }
 
 /* Список навигации */
@@ -173,6 +176,16 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+.hero-section {
+    background-image: url(img/fff.jpg);
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
 
  
 
@@ -711,6 +724,261 @@ color:#ffffff ;
 }
 .burger-btn.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
+}
+
+.slider-container {
+    text-align: center;
+    background: linear-gradient(to bottom,  #ffffff, #0f4a2a);;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    max-width: 700px;
+    width: 100%;
+    max-width: 600px;           /* ограничь ширину, чтобы слайдер не растягивался на весь экран */
+    margin: 40px auto;         /* auto по бокам центрирует, 40px сверху/снизу — отступы до других блоков */
+    padding: 0 20px;           /* внутренние отступы, если нужно, чтобы кнопки не прилипали к краям */
+    box-sizing: border-box;    /* чтобы padding не увеличивал общую ширину */
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.slider-image-wrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.slider-image-wrapper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.slider-btn {
+    background: #F4A2a2;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.slider-btn:hover {
+    background: #f18d8d;
+}
+
+.image-counter {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #b69696;
+}
+.calculator-container {
+    background:linear-gradient(to bottom,  #ffffff, #0f4a2a);;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    max-width: 600px;           /* ограничь ширину, чтобы слайдер не растягивался на весь экран */
+    margin: 40px auto;         /* auto по бокам центрирует, 40px сверху/снизу — отступы до других блоков */
+    padding: 0 20px;           /* внутренние отступы, если нужно, чтобы кнопки не прилипали к краям */
+    box-sizing: border-box; 
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+button {
+    background: #F4A2a2;
+    color: #721616;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+button:hover {
+    background: #f58080;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0f4a2a;
+    border-radius: 8px;
+}
+
+.result p {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+#finalPrice {
+    font-weight: bold;
+    font-size: 24px;
+    color: #e62222;
+}
+
+#discountAmount {
+    font-weight: bold;
+    color: #06eb65;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Контейнер карточки */
+.flip-card {
+    background-color: transparent;
+    height: 380px;
+    perspective: 1000px;  /* Создаёт 3D-эффект */
+    cursor: pointer;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Внутренний блок, который вращается */
+.flip-card-inner {
+    position: relative;
+    width: 85%;
+    height: 85%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Переворот при наведении (CSS-версия) */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Если используется класс flipped (для клика) */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Передняя и задняя стороны карточки */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;  /* Скрываем обратную сторону */
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.flip-card-front {
+    background: linear-gradient(to bottom, #0f4a2a, #659e7f, #fafafa, #fafafa);;;
+}
+
+.flip-card-back {
+    background: #0f4a2a;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.flip-card-front h3 {
+    font-size: 24px;
+    color: #000000;
+}
+
+.flip-card-front p {
+    color: #000000;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.flip-card-back h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.flip-card-btn {
+    display: inline-block;
+    background: #F4A2a2;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+.flip-card-btn:hover {
+    background: #b37070;
 }
 
 /* Мобильное меню */
